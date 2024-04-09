@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9678A37D2BC32D32004B008E /* TimerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678A37C2BC32D32004B008E /* TimerModel.swift */; };
+		9678A37F2BC3306D004B008E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678A37E2BC3306D004B008E /* Home.swift */; };
 		96CD69BF2BC230BA006762EE /* countdownapplicationApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD69BE2BC230BA006762EE /* countdownapplicationApp.swift */; };
 		96CD69C12BC230BA006762EE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CD69C02BC230BA006762EE /* ContentView.swift */; };
 		96CD69C32BC230BC006762EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CD69C22BC230BC006762EE /* Assets.xcassets */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9678A37C2BC32D32004B008E /* TimerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerModel.swift; sourceTree = "<group>"; };
+		9678A37E2BC3306D004B008E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		96CD69BB2BC230BA006762EE /* countdownapplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = countdownapplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		96CD69BE2BC230BA006762EE /* countdownapplicationApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = countdownapplicationApp.swift; sourceTree = "<group>"; };
 		96CD69C02BC230BA006762EE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		96CD69BD2BC230BA006762EE /* countdownapplication */ = {
 			isa = PBXGroup;
 			children = (
+				96CD69EA2BC239FB006762EE /* ViewModel */,
+				96CD69E92BC239EB006762EE /* View */,
 				96CD69BE2BC230BA006762EE /* countdownapplicationApp.swift */,
 				96CD69C02BC230BA006762EE /* ContentView.swift */,
 				96CD69C22BC230BC006762EE /* Assets.xcassets */,
@@ -127,6 +133,22 @@
 				96CD69DC2BC230BC006762EE /* countdownapplicationUITestsLaunchTests.swift */,
 			);
 			path = countdownapplicationUITests;
+			sourceTree = "<group>";
+		};
+		96CD69E92BC239EB006762EE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9678A37E2BC3306D004B008E /* Home.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		96CD69EA2BC239FB006762EE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9678A37C2BC32D32004B008E /* TimerModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9678A37D2BC32D32004B008E /* TimerModel.swift in Sources */,
 				96CD69C12BC230BA006762EE /* ContentView.swift in Sources */,
+				9678A37F2BC3306D004B008E /* Home.swift in Sources */,
 				96CD69BF2BC230BA006762EE /* countdownapplicationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

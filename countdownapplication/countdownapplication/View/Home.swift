@@ -63,7 +63,7 @@ struct Home: View {
                         }
                         Text(timerModel.timerStringValue)
                             .font(.system(size: 45, weight: .light))
-                            .rotationEffect(.init(degrees: -90))
+                            .rotationEffect(.init(degrees: 90))
                             .animation(.none, value: timerModel.progress)
                     }
                     .padding(60)
@@ -75,12 +75,15 @@ struct Home: View {
                     
                     Button {
                         if timerModel.isStarted{
+                            timerModel.stopTimer()
+                            //Cancelling all Notifications
+                            UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
                             
                         } else{
                             timerModel.addNewTimer = true
                         }
                     } label: {
-                        Image(systemName: !timerModel.isStarted ? "timer" : "pause")
+                        Image(systemName: !timerModel.isStarted ? "timer" : "stop.fill")
                             .font(.largeTitle.bold())
                             .foregroundColor(.white)
                             .frame(width: 80, height: 80)
@@ -117,8 +120,21 @@ struct Home: View {
             }
             .animation(.easeInOut, value: timerModel.addNewTimer)
         })
-        
         .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
+        .onReceive(Timer.publish(every: 1, on: .main, in: .common).autoconnect()) { _ in
+            if timerModel.isStarted {
+                timerModel.updateTimer()
+            }
+        }
+        .alert("You did it! Great Job!", isPresented: $timerModel.isFinished) {
+            Button("Start New", role: .cancel) {
+                timerModel.stopTimer()
+                timerModel.addNewTimer = true
+            }
+            Button("Close", role: .destructive) {
+                timerModel.stopTimer()
+            }
+        }
         
     }
     //New timer Bottom Sheet
@@ -182,7 +198,7 @@ struct Home: View {
             .padding(.top, 20)
             
             Button{
-                
+                timerModel.startTimer()
             } label: {
                 Text("Save")
                     .font(.title3)
